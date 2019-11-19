@@ -2,8 +2,9 @@ function observe(data) {
   if(!data || typeof data !== 'object') return
   for(var key in data) {
     let val = data[key]
-    let subject = new Subject()
+    let subject = new Subject()  // 创建订阅者
     Object.defineProperty(data, key, {
+      // 将 key 里面的数据代理到data 上
       enumerable: true,
       configurable: true,
       get: function() {
@@ -35,6 +36,10 @@ class Subject {
     this.id = id++
     this.observers = []
   }
+  /**
+   * 将观察者添加到Subject 数组当中
+   * @param {Object}
+   */
   addObserver(observer) {
     this.observers.push(observer)
   }

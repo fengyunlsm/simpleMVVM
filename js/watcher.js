@@ -25,7 +25,7 @@ class Observer{
     let value = this.getValue()
     if(value !== oldVal) {
       this.value = value
-      // bind is what
+      // 调用回调函数对视图进行更新
       this.cb.bind(this.vm)(value, oldVal)
     }
   }
@@ -36,7 +36,7 @@ class Observer{
   subscribeTo(subject) {
     if(!this.subjects[subject.id]){
       console.log('subscribeTo.. ', subject)
-       subject.addObserver(this) // 将订阅者添加到数组当中
+       subject.addObserver(this)  // 将订阅者添加到数组当中
        this.subjects[subject.id] = subject
     }
   }

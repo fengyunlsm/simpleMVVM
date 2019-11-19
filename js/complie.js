@@ -61,7 +61,7 @@ class Compile {
         // 如果是 v-on 指令
         this.bindEventHander(node, attr)
       }
-      // 如果是 v-text v-html v-class 指令,那该怎么搞
+      // 如果是 v-text v-html v-class 指令, 那该怎么搞
     })
   }
   /**
@@ -73,6 +73,7 @@ class Compile {
     let key = attr.value       //attr.value === 'name'
     node.value = this.vm[key]
     new Observer(this.vm, key, function(newVal){
+      // 添加回调函数
       node.value = newVal
     })
     node.oninput = (e)=>{
