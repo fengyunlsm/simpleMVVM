@@ -1,9 +1,10 @@
-###simpleMVVM的实际效果如下：
+### simpleMVVM的实际效果如下：
 实时计算以及双向绑定数据
 
 
 
-###simpleMVVM具体的流程图如下：
+simpleMVVM具体的流程图如下：
+-------------------------
 ![image](https://github.com/fengyunlsm/simpleMVVM/blob/master/image/total.png)
 simpleMVVM 主要分成三个部分，求中包括 complie、observer、watcher。
 其中observer的作用是通过Object.defineProperty来监听data里面数据的变化，故需要遍历来设置监听。当获取数据时，get监听会将观察者（observer类）添加到订阅者（subject类）的数组当中，当数据发生变化的时候，set监听会通过notify 函数通知视图再次更新。
