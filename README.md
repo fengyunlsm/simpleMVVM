@@ -2,6 +2,7 @@ simpleMVVM的实际效果如下：
 实时计算以及双向绑定数据
 
 
+
 simpleMVVM具体的流程图如下：
 ![image](https://github.com/fengyunlsm/simpleMVVM/blob/master/image/total.png)
 simpleMVVM 主要分成三个部分，求中包括 complie、observer、watcher。
@@ -11,6 +12,7 @@ simpleMVVM 主要分成三个部分，求中包括 complie、observer、watcher�
 
 
 complie的核心代码如下：
+
 ![image](https://github.com/fengyunlsm/simpleMVVM/blob/master/image/complie.png)
 对模板进行解析，如果是DOM节点，则对指令进行解析，如果是文本节点，则另外进行解析。
 当进行指令解析的时候，如果v-on指令，则将对应的事件绑定到DOM节点上。
@@ -18,6 +20,7 @@ complie的核心代码如下：
 
 
 observer的核心代码如下：
+
 ![image](https://github.com/fengyunlsm/simpleMVVM/blob/master/image/observer.png)
 触发get监听时，负责将观察者添加到订阅者的数组当中
 触发set监听时，调用notify函数触发视图更新
@@ -25,11 +28,13 @@ observer的核心代码如下：
 
 
 然后，介绍一下wathcer：
+
 ![image](https://github.com/fengyunlsm/simpleMVVM/blob/master/image/watcher.png)
 主要作用是触发addScribeTO添加订阅者，和触发nofity->update函数，则会进行视图更新
 
 
 最后，介绍一下MVVM：
+
 ![image](https://github.com/fengyunlsm/simpleMVVM/blob/master/image/init.png)
 主要的作用是整合watcher，observer，complie。其次的作用是，首先通过Object.defineProperty将data里面的属性绑定到vm上，使得可以通过this.xxx访问到对应的属性；然后初始化计算属性；其次通过observer对data里面的数据监听。最后，开始编译complie，对指令（v-on,v-model,v-bind）进行解析。
 
@@ -39,4 +44,5 @@ observer的核心代码如下：
 
 
 关于计算属性的实现
+
 ![image](https://github.com/fengyunlsm/simpleMVVM/blob/master/image/computed.png)
