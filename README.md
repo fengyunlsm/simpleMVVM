@@ -1,5 +1,8 @@
-### simpleMVVM的实际效果如下：
-实时计算以及双向绑定数据
+### simpleMVVM的实际效果如下（实时计算和双向绑定数据）：
+
+![image](https://github.com/fengyunlsm/simpleMVVM/blob/master/image/simpleMVVM.gif)
+
+
 
 
 
