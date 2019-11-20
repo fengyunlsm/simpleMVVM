@@ -26,6 +26,7 @@ class Observer{
     if(value !== oldVal) {
       this.value = value
       // 调用回调函数对视图进行更新
+      // 对视图进行更新
       this.cb.bind(this.vm)(value, oldVal)
     }
   }

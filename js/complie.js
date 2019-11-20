@@ -71,9 +71,9 @@ class Compile {
   ***/
   bindModel(node, attr){
     let key = attr.value       //attr.value === 'name'
-    node.value = this.vm[key]
+    node.value = this.vm[key]  // 初始更新视图
     new Observer(this.vm, key, function(newVal){
-      // 添加回调函数
+      // 再次更新视图会调用下面这个函数
       node.value = newVal
     })
     node.oninput = (e)=>{

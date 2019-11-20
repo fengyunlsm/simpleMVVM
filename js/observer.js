@@ -43,6 +43,12 @@ class Subject {
   addObserver(observer) {
     this.observers.push(observer)
   }
+
+  /**
+   *
+   * @param {Object} observer 观察者
+   *
+   */
   removeObserver(observer) {
     var index = this.observers.indexOf(observer)
     if(index > -1){
