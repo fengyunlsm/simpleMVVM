@@ -31,13 +31,19 @@ function observe(data) {
 let id = 0
 let currentObserver = null
 
+
+/**
+ * 订阅者的类
+ * @param
+ */
+
 class Subject {
   constructor() {
     this.id = id++
     this.observers = []
   }
   /**
-   * 将观察者添加到Subject 数组当中
+   * 将观察者添加到 Subject 数组当中
    * @param {Object}
    */
   addObserver(observer) {
@@ -45,7 +51,7 @@ class Subject {
   }
 
   /**
-   *
+   * 删除观察者
    * @param {Object} observer 观察者
    *
    */
@@ -55,6 +61,9 @@ class Subject {
       this.observers.splice(index, 1)
     }
   }
+  /**
+   * 通知观察者更新视图
+   */
   notify() {
     this.observers.forEach(observer=> {
       observer.update()

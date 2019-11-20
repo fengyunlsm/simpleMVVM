@@ -1,6 +1,6 @@
 /**
  *
- * @file 数据劫持
+ * @file 观察者的类
  * @author lishaoming
  */
 class Observer{
