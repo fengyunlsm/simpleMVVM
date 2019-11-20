@@ -18,8 +18,7 @@ simpleMVVM 主要分成三个部分，求中包括 complie、observer、watcher�
 
 
 
-### complie的核心代码如下：
-
+### complie的核心代码如下：<br>
 ![image](https://github.com/fengyunlsm/simpleMVVM/blob/master/image/complie.png)
 
 对模板进行解析，如果是DOM节点，则对指令进行解析，如果是文本节点，则另外进行解析。
