@@ -45,7 +45,7 @@ class Compile {
   }
 
   /**
-  *
+  * 解析AST，对指令进行解析
   * @param {Object} node
   *
   */
